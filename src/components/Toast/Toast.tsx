@@ -10,13 +10,14 @@ import {
 } from '../Icons/Icons';
 
 import './Toast.css';
+import Button from '../Button';
 
-const StyledToast = styled.div<{ typeColor: string }>`
+const StyledToast = styled.div`
   width: 400px;
   height: 50px;
   padding: 0.5rem 1rem;
 
-  background: ${(props) => props.typeColor || '#fff'};
+  background: #272727;
   border-radius: 0.5rem;
   border: 1px solid #000;
 
@@ -30,13 +31,13 @@ const StyledContent = styled.div`
   align-items: center;
 `;
 
-const StyledToastMessage = styled.div<{ typeColor: string }>`
+const StyledToastMessage = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 1rem;
 
-  color: ${(props) => props.typeColor || '#fff'};
+  color: #fff;
 `;
 
 const StyledProgress = styled.div<{ typeColor: string }>`
@@ -45,20 +46,10 @@ const StyledProgress = styled.div<{ typeColor: string }>`
   background: ${(props) => props.typeColor || '#fff'};
 `;
 
-const StyledCloseButton = styled.button`
-  background: gray;
-  color: #ffffff;
-  border: 1px solid #000;
-  cursor: pointer;
-  border-radius: 6px;
+const StyledCloseButton = styled(Button)`
   padding: 0.5rem 1rem;
-  transition:
-    border-color 0.2s,
-    background 0.2s;
-
-  &:hover {
-    border: 1px solid white;
-    background: rgb(199, 150, 150);
+  >.icon {
+    color: #ffffff;
   }
 `;
 
@@ -71,27 +62,16 @@ const Toast: React.FC<ToastProps> = ({
   ...props
 }) => {
 
-  function getBgColor() {
-    if (type === 'Success') return "green";
-    else if (type === 'Warning') return "yellow";
-    else if (type === 'Error') return "red";
-    else if (type === 'Info') return "cyan";
-    else if (type === 'Custom') return "violet";
-
-    return '#fff';
-  }
-
   function getFgColor() {
-    if (type === 'Success') return '#abe9cb';
+    if (type === 'Success') return '#518551';
     else if (type === 'Warning') return "orange";
-    else if (type === 'Error') return "white";
-    else if (type === 'Info') return "blue";
-    else if (type === 'Custom') return "red";
+    else if (type === 'Error') return "#bf5151";
+    else if (type === 'Info') return "#508da1";
+    else if (type === 'Custom') return "#955b95";
 
     return '#fff';
   }
 
-  const typeBgColor = getBgColor();
   const typeFgColor = getFgColor();
 
   const iconMap = {
@@ -105,22 +85,16 @@ const Toast: React.FC<ToastProps> = ({
   const toastIcon = iconMap[type] || null;
 
   return (
-    <StyledToast
-      typeColor={typeBgColor}
-      role="alert"
-    >
+    <StyledToast role="alert">
       <StyledContent>
-        <StyledToastMessage
-          className="toast-message"
-          typeColor={typeFgColor}
-        >
+        <StyledToastMessage className="toast-message">
           {toastIcon && (
-            <div className="icon icon--lg icon--thumb">{toastIcon}</div>
+            <div className="icon icon--lg icon--thumb" style={{ color: typeFgColor }}>{toastIcon}</div>
           )}
           <p>{message}</p>
         </StyledToastMessage>
-        <StyledCloseButton onClick={onClose} {...props}>
-          <span className="icon">
+        <StyledCloseButton onClick={onClose} primary={true}>
+          <span className='icon'>
             <CloseIcon />
           </span>
         </StyledCloseButton>

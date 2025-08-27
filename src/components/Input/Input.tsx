@@ -6,10 +6,9 @@ const StyledInput = styled.input<InputProps>`
   height: 40px;
   width: 300px;
   border-radius: 3px;
-  background-color: #fff;
-  border: solid 2px
-    ${(props) =>
-      props.disabled ? "#e4e3ea" : props.error ? "#a9150b" : props.success ? "#067d68" : props.primary ? "#57bf92" : "#6154cb"};
+  background-color: ${(props) => props.disabled ? "#555" : "#272727"};
+  border: solid 2px ${(props) => props.disabled ? "#888" : props.error ? "#a9150b" : props.success ? "#067d68" : props.primary ? "#38434f" : "#3e3647"};
+  color: #ffffff;
   &:focus {
     border: solid 2px #1b116e;
   }
@@ -29,7 +28,7 @@ const StyledMessage = styled.div<InputProps>`
 
 const StyledText = styled.p<InputProps>`
   margin: 0px;
-  color: ${(props) => (props.disabled ? "#e4e3ea" : props.error ? "#a9150b" : "#080808")};
+  color: ${(props) => (props.disabled ? "#aaa" : props.error ? "#a9150b" : "#080808")};
 `;
 
 const Input: React.FC<InputProps> = ({

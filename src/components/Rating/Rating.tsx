@@ -14,7 +14,7 @@ const StyledIcon = styled.span<RatingProps>`
   border: none;
   padding: 0;
   outline: none;
-  cursor: pointer;
+  cursor: "inherit";
   font-size: ${(props) =>
     props.size === "small"
       ? "1rem"
@@ -25,9 +25,9 @@ const StyledIcon = styled.span<RatingProps>`
 
 const StyledButton = styled.button<RatingProps>`
   border: none;
-  cursor: pointer;
+  cursor: ${(props) => (props.disabled ? "inherit" : "pointer")};
   color: ${(props) => (props.starActive ? "#ffd600" : "#999")};
-  background: ${(props) => (props.disabled ? "#ccc" : props.primary ? "#57bf92" : "#6154cb")};
+  background: ${(props) => (props.disabled ? "#ccc" : props.primary ? "#272727" : "#272727")};
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
   padding: ${(props) =>
     props.size === "small"
@@ -37,7 +37,7 @@ const StyledButton = styled.button<RatingProps>`
       : "1rem"};
   &:hover {
     color: ${(props) => (props.disabled ? "#999" : props.starActive ? "#ffd600" : "#888")};
-    background: ${(props) => (props.disabled ? "#ccc" : props.primary ? "#6cc9a1" : "#6d61cb")};
+    background: ${(props) => (props.disabled ? "#ccc" : props.primary ? "#38434f" : "#3e3647")};
   }
 `;
 
