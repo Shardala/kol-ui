@@ -83,11 +83,11 @@ const Template: ComponentStory<typeof ToastContainer> = (args) => {
   return (
     <>
       <ul style={{ listStyle: 'none' }}>
-        <li><StyledSuccess size='small' text='Success' onClick={() => showToast('Test success toast', 'Success')}></StyledSuccess></li>
-        <li><StyledWarning size='small' text='Warning' onClick={() => showToast('Test warning toast', 'Warning')}></StyledWarning></li>
-        <li><StyledError size='small' text='Error' onClick={() => showToast('Test error toast', 'Error')}></StyledError></li>
-        <li><StyledInfo size='small' text='Info' onClick={() => showToast('Test info toast', 'Info')}></StyledInfo></li>
-        <li><StyledCustom size='small' text='Custom' onClick={() => showToast('Test custom toast', 'Custom')}></StyledCustom></li>
+        <li><StyledSuccess size='small' onClick={() => showToast('Test success toast', 'Success')}>{'Success'}</StyledSuccess></li>
+        <li><StyledWarning size='small' onClick={() => showToast('Test warning toast', 'Warning')}>{'Warning'}</StyledWarning></li>
+        <li><StyledError size='small' onClick={() => showToast('Test error toast', 'Error')}>{'Error'}</StyledError></li>
+        <li><StyledInfo size='small' onClick={() => showToast('Test info toast', 'Info')}>{'Info'}</StyledInfo></li>
+        <li><StyledCustom size='small' onClick={() => showToast('Test custom toast', 'Custom')}>{'Custom'}</StyledCustom></li>
       </ul>
 
       <ToastContainer data={toasts} position={position} removeToast={removeToast} />

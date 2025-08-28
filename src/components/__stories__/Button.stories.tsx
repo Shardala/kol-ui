@@ -15,40 +15,40 @@ export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
   disabled: false,
-  text: 'Primary',
+  children: 'Primary',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   primary: false,
   disabled: false,
-  text: 'Secondary',
+  children: 'Secondary',
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   primary: false,
   disabled: true,
-  text: 'Disabled',
+  children: 'Disabled',
 };
 
 export const Small = Template.bind({});
 Small.args = {
   ...Primary.args,
   size: 'small',
-  text: 'Small',
+  children: 'Small',
 };
 
 export const Medium = Template.bind({});
 Medium.args = {
   ...Primary.args,
   size: 'medium',
-  text: 'Medium',
+  children: 'Medium',
 };
 
 export const Large = Template.bind({});
 Large.args = {
   ...Primary.args,
   size: 'large',
-  text: 'Large',
+  children: 'Large',
 };

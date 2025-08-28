@@ -16,7 +16,7 @@ Primary.args = {
   primary: true,
   error: false,
   disabled: false,
-  label: 'Primary',
+  label: 'Name (Primary)',
 };
 
 export const Secondary = Template.bind({});
@@ -24,7 +24,7 @@ Secondary.args = {
   primary: false,
   error: false,
   disabled: false,
-  label: 'Secondary',
+  label: 'Name (Secondary)',
 };
 
 export const Success = Template.bind({});
@@ -33,7 +33,7 @@ Success.args = {
   error: false,
   success: true,
   disabled: false,
-  label: 'Success',
+  label: 'This field is filled successfully',
 };
 
 export const Error = Template.bind({});
@@ -41,12 +41,12 @@ Error.args = {
   primary: true,
   error: true,
   disabled: false,
-  message: 'Error',
+  message: 'Error: Field can\'t be empty!',
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   primary: true,
   disabled: true,
-  label: 'Disabled',
+  label: 'This field is disabled',
 };

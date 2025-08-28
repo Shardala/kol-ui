@@ -22,7 +22,7 @@ const StyledButton = styled.button<ButtonProps>`
 `;
 
 const Button = (props: any) => {
-  const { text, primary, disabled, size, onClick, ...rest } = props;
+  const { primary, disabled, size, onClick, ...rest } = props;
 
   return (
     <StyledButton
@@ -33,7 +33,6 @@ const Button = (props: any) => {
       size={size}
       {...props}
     >
-      {text as any}
       {props.children}
     </StyledButton>
   );
